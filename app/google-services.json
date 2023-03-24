@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "524164218341",
+    "project_id": "your-care-24x7",
+    "storage_bucket": "your-care-24x7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524164218341:android:0abbdb11818ecb149b430c",
+        "android_client_info": {
+          "package_name": "com.example.yourcare24x7"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524164218341-lk2ug0bec0pv10rae7unvvtu6vmf1opl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yourcare24x7",
+            "certificate_hash": "c06eadf9d6c1dd9f786ed4e1bcd5923fcb261026"
+          }
+        },
+        {
+          "client_id": "524164218341-sbftq2imdkierelpjtnk84m8hcs403d4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3wu1QJUlIJeC-H4L23Nh_Bah0nrBC8Mg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524164218341-dgrgdus3ons1lju8hqqkpo6s8pqm0ssa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
