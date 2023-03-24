@@ -16,34 +16,28 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
-class MainActivity : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity() {
     // vars for google authentication
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInclient: GoogleSignInClient
 
-    //instantiating views
-    private  lateinit var signUptextview : TextView
-    private lateinit var loginButton: Button
-
+    private lateinit var signintextview : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        signUptextview = findViewById(R.id.signUpLogin)
-        signUptextview.setOnClickListener{
-            startActivity(Intent(this@MainActivity,SignUpActivity::class.java))
+        setContentView(R.layout.activity_sign_up)
+        signintextview = findViewById(R.id.signintv)
+        signintextview.setOnClickListener {
+            startActivity(Intent(this@SignUpActivity, MainActivity::class.java))
         }
-
-        loginButton = findViewById(R.id.loginBtn)
-        auth = FirebaseAuth.getInstance()
+        auth= FirebaseAuth.getInstance()
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail().build()
         googleSignInclient = GoogleSignIn.getClient(this, gso)
-        findViewById<Button>(R.id.gBtnLogin).setOnClickListener {
+        findViewById<Button>(R.id.gSignupBTN).setOnClickListener {
             signInGoogle()
         }
     }
-
     private fun signInGoogle() {
         val signInIntent = googleSignInclient.signInIntent
         launcher.launch(signInIntent)
