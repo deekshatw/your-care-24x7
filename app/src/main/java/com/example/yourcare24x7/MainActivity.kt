@@ -24,16 +24,13 @@ class MainActivity : AppCompatActivity() {
     //instantiating views
     private  lateinit var signUptextview : TextView
     private lateinit var loginButton: Button
+    private lateinit var forgotPasswordTv : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        signUptextview = findViewById(R.id.signUpLogin)
-        signUptextview.setOnClickListener{
-            startActivity(Intent(this@MainActivity,SignUpActivity::class.java))
-        }
 
-        loginButton = findViewById(R.id.loginBtn)
+
         auth = FirebaseAuth.getInstance()
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -41,6 +38,22 @@ class MainActivity : AppCompatActivity() {
         googleSignInclient = GoogleSignIn.getClient(this, gso)
         findViewById<Button>(R.id.gBtnLogin).setOnClickListener {
             signInGoogle()
+        }
+
+        //intents
+        signUptextview = findViewById(R.id.signUpLogin)
+        signUptextview.setOnClickListener{
+            startActivity(Intent(this@MainActivity,SignUpActivity::class.java))
+        }
+
+        forgotPasswordTv = findViewById(R.id.loginForgotPassword)
+        forgotPasswordTv.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ForgotPasswordActivity::class.java))
+        }
+
+        loginButton = findViewById(R.id.loginBtn)
+        loginButton.setOnClickListener {
+            startActivity(Intent(this@MainActivity, LoggedInActivity::class.java))
         }
     }
 

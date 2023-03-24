@@ -10,7 +10,7 @@ class LoggedInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_logged_in)
-        continueBtn = findViewById(R.id.conitnueBtn)
+        continueBtn = findViewById(R.id.continueBtn)
         continueBtn.setOnClickListener {
             startActivity(Intent(this@LoggedInActivity,FeelingsActivity::class.java))
         }
